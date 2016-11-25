@@ -186,7 +186,7 @@ class Database extends Model
 
     public function getHost($accountId)
     {
-        return env('DB_HOST_USER_DATABASE', '192.168.10.10');
+        return env('DB_HOST_USER_DATABASE', '127.0.0.1');
     }
 
     public function getPort($accountId)
@@ -196,12 +196,12 @@ class Database extends Model
 
     public function getDatabase($accountId)
     {
-        return env('DB_DATABASE_USER_DATABASE', 'secret');
+        return env('DB_DATABASE_USER_DATABASE', 'core');
     }
 
     public function getUsername($accountId)
     {
-        return env('DB_USERNAME_USER_DATABASE', 'topicmine');
+        return env('DB_USERNAME_USER_DATABASE', 'homestead');
     }
 
     public function getPassword($accountId)
