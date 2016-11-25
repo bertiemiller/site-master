@@ -80,6 +80,22 @@ class Database extends Model
 
     public function createNewDatabase()
     {
+        // % means all ips
+        $result = DB::connection($this->serverConnectionKey)
+            ->statement('GRANT ALL PRIVILEGES ON * . * TO \'homestead\'@\'%\' IDENTIFIED BY \'secret\' WITH GRANT OPTION;');
+
+        if(true !== $result) {
+            throw new GeneralException('Error granting user privileges');
+        }
+
+        // flush privileges
+        $result = DB::connection($this->serverConnectionKey)
+            ->statement('FLUSH PRIVILEGES;');
+
+        if(true !== $result) {
+            throw new GeneralException('Error flushing privileges');
+        }
+
         // create database
         $result = DB::connection($this->serverConnectionKey)
             ->statement('CREATE DATABASE ' . $this->newAccountConnectionSettings['database'] . ';' );

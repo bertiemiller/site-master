@@ -128,6 +128,24 @@ class CoreServiceProvider extends ServiceProvider {
         view()->share('masterView', 'core.layout.master');
     }
 
+    public function grantAllPriviledgesToHomesteadUser()
+    {
+        // % means all ips
+        $result = DB::statement('GRANT ALL PRIVILEGES ON * . * TO \'homestead\'@\'%\' IDENTIFIED BY \'secret\' WITH GRANT OPTION;');
+
+        if(true !== $result) {
+            throw new GeneralException('Error granting user privileges');
+        }
+
+        // flush privileges
+        $result = DB::connection($this->serverConnectionKey)
+            ->statement('FLUSH PRIVILEGES;');
+
+        if(true !== $result) {
+            throw new GeneralException('Error flushing privileges');
+        }
+    }
+
     public function updateAppConfigFile()
     {
         $sourceFile = base_path() . '/config/app.php';
