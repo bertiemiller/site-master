@@ -21,8 +21,9 @@ Route::group([
         ->name('topicmine.url_scrape.url.urlResults');
 //    Route::get('url/{id}/js_results', 'UrlController@jsResults')->name('admin.data.url.url.js_results');
 
-    Route::get('url/{id}/scrape', 'UrlController@scrape')
-        ->name('topicmine.url_scrape.url.scrape');
+    // disabled because it was casuing a bug when live
+//    Route::get('url/{id}/scrape', 'UrlController@scrape')
+//        ->name('topicmine.url_scrape.url.scrape');
 
     Route::post('url/{id}/js-scrape', 'UrlController@jsScrape')
         ->name('topicmine.url_scrape.url.jsScrape');

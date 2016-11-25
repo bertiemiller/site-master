@@ -21,11 +21,14 @@
                                                 {!! Form::text('url['.$item['id'].']', $item['url'], ['class' => 'form-control']) !!}
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="pull-left">
-                                                    {!! Form::open(['url' => route( core()->routeBase().'.scrape', $item['id']), '_method' => 'POST']) !!}
-                                                    {!! Form::submit('Url Scrape', array('class' => 'btn btn-primary')) !!}
-                                                    {!! Form::close() !!}
-                                                </div>
+
+                                                {{--Disabled because it was causing a bug when live--}}
+                                                {{--<div class="pull-left">--}}
+                                                    {{--{!! Form::open(['url' => route( core()->routeBase().'.scrape', $item['id']), '_method' => 'POST']) !!}--}}
+                                                    {{--{!! Form::submit('Url Scrape', array('class' => 'btn btn-primary')) !!}--}}
+                                                    {{--{!! Form::close() !!}--}}
+                                                {{--</div>--}}
+
                                                 <div class="pull-left">
                                                     <a href="{{ route( core()->routeBase().'.urlResults', $item['id']) }}"
                                                        class="btn btn-primary"

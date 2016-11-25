@@ -15,11 +15,13 @@ class UrlTransformer extends TransformerAbstract {
 
             'url'     => $model->url,
 
-            '__action:normal_scrape' => [
-                'actionName' => 'Run',
-                'actionMethod' => 'actionScrape',
-                'postMethod' => 'POST'
-            ],
+            // disabled because it was causing a bug when live
+
+//            '__action:normal_scrape' => [
+//                'actionName' => 'Run',
+//                'actionMethod' => 'actionScrape',
+//                'postMethod' => 'POST'
+//            ],
 
             '__link:url_results' => [
                 'url' => route( core()->routeBase().'.urlResults', $model->id, false),
