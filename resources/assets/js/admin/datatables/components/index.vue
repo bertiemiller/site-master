@@ -91,7 +91,7 @@
                 </div>
                 <div :class="[{'vuetable-wrapper ui basic segment': true}, loading]">
                     <vuetable
-                            api-url="http://api.master.loc/api/data"
+                            api-url="http://topicmine.io/api/data"
                             :fields="columns"
                             :per-page="perPage"
                             data-path="data"
