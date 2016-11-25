@@ -59,8 +59,8 @@ class SubscriptionController extends DataTablesController
         }
 
         $data['subscribedTo'] = false;
-        if (account_user()->subscribed(config('admin.stripe_plan_name'))) {
-            $data['subscribedTo'] = config('admin.stripe_plan_name');
+        if (account_user()->subscribed(config('subscription.stripe_plan_name'))) {
+            $data['subscribedTo'] = config('subscription.stripe_plan_name');
         }
 
         $data['address'] = auth_user()->contacts()->where('default', 1)->first();

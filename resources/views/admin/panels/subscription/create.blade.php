@@ -17,7 +17,7 @@
             <div class="box-body">
                 <table class="table table-striped table-bordered table-hover">
                     <tbody>
-                        @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('admin.stripe_plan_name') ) )
+                        @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('subscription.stripe_plan_name') ) )
                             <form novalidate autocomplete="on" method="POST"
                                   action="{{ route(core()->routeStoreName()) }}"
                                   id="payment-form" class="form-horizontal">
@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <span class="col-md-4 control-label"></span>
                                         <div class="col-md-6">
-                                            @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('admin.stripe_plan_name') ) )
+                                            @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('subscription.stripe_plan_name') ) )
                                                 <div class="payment_button">
                                                     <script src="https://checkout.stripe.com/checkout.js"></script>
                                                     <button id="customButton" class="btn btn-lg btn-primary">Pay Now</button>
@@ -95,7 +95,7 @@
         </div>
     </div>
 
-    @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('admin.stripe_plan_name') ) )
+    @if( ! ( isset($data['subscribedTo']) && $data['subscribedTo'] == config('subscription.stripe_plan_name') ) )
         <script>
             function showHideStripe(topics, domains) {
 

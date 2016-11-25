@@ -124,7 +124,7 @@ class PlanRepository extends CoreRepository implements PlanRepositoryInterface {
         $amount = $plan['price'];
         $trial_period_days = $plan['trial_period_days'];
         $description = $plan['description'];
-        $type = config('admin.stripe_plan_name');
+        $type = config('subscription.stripe_plan_name');
 
         return  $this->getStripePlanRepo()
             ->getPlanAttributes($stripe_id, $name, $amount, $trial_period_days, $description, $type);
