@@ -51,7 +51,7 @@ class RegisterSubscriptionController extends Controller
 
         // create database
         $db = new Database;
-        $db->dropDatabaseAndUserIfExists($account->id);
+//        $db->dropDatabaseAndUserIfExists($account->id);
         $requestParams['database_id'] = $db->createDatabase($account->id);
 
         $requestParams['user_id'] = $user->id;
