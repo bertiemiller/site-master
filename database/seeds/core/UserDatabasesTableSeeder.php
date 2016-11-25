@@ -18,9 +18,9 @@ class UserDatabasesTableSeeder extends Seeder
 
         // create database with Admin user id 2
         $db = new Database;
-        $db->dropDatabaseAndUserIfExists(1);
+//        $db->dropDatabaseAndUserIfExists(1);
         $db->createDatabase(1);
-        $db->dropDatabaseAndUserIfExists(2);
+//        $db->dropDatabaseAndUserIfExists(2);
         $db->createDatabase(2);
 
         if (env('DB_CONNECTION') == 'mysql') {
