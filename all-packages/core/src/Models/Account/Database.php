@@ -155,14 +155,14 @@ class Database extends Model
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
-        Schema::connection($this->databaseSettings->connection_key)->create('settings', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('key');
-            $table->string('value');
-            $table->integer('user_id')->unsigned();
-            $table->timestamps();
-            $table->softDeletes();
-        });
+//        Schema::connection($this->databaseSettings->connection_key)->create('settings', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->string('key');
+//            $table->string('value');
+//            $table->integer('user_id')->unsigned();
+//            $table->timestamps();
+//            $table->softDeletes();
+//        });
 
         // Would like to convert to an artisan command
         //        Artisan::call('migrate', [
