@@ -1,7 +1,8 @@
 <?php
 
 
-Route::group(['middleware' => 'cors'], function ()
+//Route::group(['middleware' => 'cors'], function ()
+Route::group([], function ()
 {
     $api = app('Dingo\Api\Routing\Router');
     $api->version('v1', ['middleware' => 'api.auth'], function ($api)
