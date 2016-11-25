@@ -13,7 +13,7 @@ Route::group([
 
     Route::get('dashboard', 'DashboardController@index')
         ->name('topicmine.url_scrape.dashboard.index');
-    
+
     Route::get('action', 'UrlController@action')
         ->name('topicmine.url_scrape.url.action');
 
