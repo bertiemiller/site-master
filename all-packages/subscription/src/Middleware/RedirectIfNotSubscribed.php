@@ -15,7 +15,7 @@ class RedirectIfNotSubscribed
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user() && ! $request->user()->subscribed( config('admin.stripe_plan_name') )) {
+        if ($request->user() && ! $request->user()->subscribed( config('subscription.stripe_plan_name') )) {
             // This user is not a paying customer...
             return redirect('/?billing-sign-up=from-middleware-subscribed');
         }
