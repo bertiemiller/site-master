@@ -68,9 +68,11 @@ class CoreUsersTableSeeder extends Seeder {
 
         DB::table('users')->insert($users);
 
+        $users2 = [];
+
         for ($i = 10; $i < 30; $i++)
         {
-            $users2[] = [
+            $user = [
                 'name'              => 'Name',
                 'email'             => 'admin' . $i . '@topicmine.io',
                 'password'          => bcrypt('admin'),
@@ -81,7 +83,10 @@ class CoreUsersTableSeeder extends Seeder {
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ];
+            array_push($users2, $user);
         }
+
+        var_dump($users2);
 
         DB::table('users')->insert($users2);
 
