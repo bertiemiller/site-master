@@ -13,6 +13,19 @@ Route::group([
 
     Route::get('dashboard', 'DashboardController@index')
         ->name('topicmine.url_scrape.dashboard.index');
+    
+    Route::get('action', 'UrlController@action')
+        ->name('topicmine.url_scrape.url.action');
+
+    Route::get('url/{id}/url-results', 'UrlController@urlResults')
+        ->name('topicmine.url_scrape.url.urlResults');
+//    Route::get('url/{id}/js_results', 'UrlController@jsResults')->name('admin.data.url.url.js_results');
+
+    Route::get('url/{id}/scrape', 'UrlController@scrape')
+        ->name('topicmine.url_scrape.url.scrape');
+
+    Route::post('url/{id}/js-scrape', 'UrlController@jsScrape')
+        ->name('topicmine.url_scrape.url.jsScrape');
 
     createRoutes([
         [
@@ -30,16 +43,5 @@ Route::group([
         ]
     ]);
 
-    Route::get('action', 'UrlController@action')
-        ->name('topicmine.url_scrape.url.action');
-
-    Route::get('url/{id}/url-results', 'UrlController@urlResults')
-        ->name('topicmine.url_scrape.url.urlResults');
-//    Route::get('url/{id}/js_results', 'UrlController@jsResults')->name('admin.data.url.url.js_results');
-
-    Route::get('url/{id}/scrape', 'UrlController@scrape')
-        ->name('topicmine.url_scrape.url.scrape');
-    Route::post('url/{id}/js-scrape', 'UrlController@jsScrape')
-        ->name('topicmine.url_scrape.url.jsScrape');
 
 });
