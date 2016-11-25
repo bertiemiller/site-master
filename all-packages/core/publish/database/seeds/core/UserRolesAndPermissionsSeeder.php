@@ -68,7 +68,7 @@ class UserRolesAndPermissionsSeeder extends Seeder{
         User::find(4)->attachRole(4);
 
 
-        for ($i = 10; $i < 30; $i++)
+        for ($i = 5; $i < 30; $i++)
         {
             User::find($i)->attachRole(2);
         }

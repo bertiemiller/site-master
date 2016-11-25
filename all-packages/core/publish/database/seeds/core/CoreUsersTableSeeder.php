@@ -70,7 +70,7 @@ class CoreUsersTableSeeder extends Seeder {
 
         $users2 = [];
 
-        for ($i = 10; $i < 30; $i++)
+        for ($i = 5; $i < 30; $i++)
         {
             $user = [
                 'name'              => 'Name',

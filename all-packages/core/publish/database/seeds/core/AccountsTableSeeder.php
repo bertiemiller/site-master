@@ -32,7 +32,7 @@ class AccountsTableSeeder extends Seeder
             'database_id'     => 2,
         ));
 
-        for ($i = 10; $i < 30; $i++)
+        for ($i = 5; $i < 30; $i++)
         {
             Account::create(array(
                 'id' => $i,
