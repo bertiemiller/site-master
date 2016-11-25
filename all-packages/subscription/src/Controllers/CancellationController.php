@@ -33,7 +33,7 @@ class CancellationController extends CoreController
         $inputs['account_id'] = account()->id;
 
         // cancel subscriptions
-        $subscriptionRepo = repo()->make('Topicmine\Admin\Repositories\Account\Subscription\Subscription');
+        $subscriptionRepo = repo()->make('Topicmine\Subscription\Repositories\Account\Subscription\Subscription');
         $subscription = $subscriptionRepo->findByField('user_id', $inputs['user_id']);
         $inputs['subscription_id'] = 0;
 
