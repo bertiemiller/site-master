@@ -29,6 +29,16 @@ class UserContactsTableSeeder extends Seeder
             $cObj->create($c);
         }
 
+        for ($i = 10; $i < 30; $i ++)
+        {
+            $c = [
+                'user_id' => $i,
+                'first_name' => '(first name)',
+                'last_name' => '(last name)'
+            ];
+            $cObj->create($c);
+        }
+
 //        // create database with Admin user id 2
 //        $db = new Database;
 //        $db->dropDatabaseAndUserIfExists(1);

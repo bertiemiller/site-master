@@ -8,11 +8,12 @@ use Illuminate\Support\Facades\DB;
 /**
  * Class UserTableSeeder
  */
-class CoreUsersTableSeeder extends Seeder
-{
+class CoreUsersTableSeeder extends Seeder {
+
     public function run()
     {
-        if (env('DB_CONNECTION') == 'mysql') {
+        if (env('DB_CONNECTION') == 'mysql')
+        {
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         }
 
@@ -26,7 +27,7 @@ class CoreUsersTableSeeder extends Seeder
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
                 'account_id'        => 1,
-                'status'        => 1,
+                'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
@@ -37,7 +38,7 @@ class CoreUsersTableSeeder extends Seeder
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
                 'account_id'        => 2,
-                'status'        => 1,
+                'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
@@ -48,7 +49,7 @@ class CoreUsersTableSeeder extends Seeder
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
                 'account_id'        => 2,
-                'status'        => 1,
+                'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
@@ -59,13 +60,31 @@ class CoreUsersTableSeeder extends Seeder
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
                 'account_id'        => 2,
-                'status'        => 1,
+                'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
         ];
 
         DB::table('users')->insert($users);
+
+        for ($i = 10; $i < 30; $i ++)
+        {
+            $users2[] = [
+                'name'              => 'Name',
+                'email'             => 'admin' . $i . '@topicmine.io',
+                'password'          => bcrypt('admin'),
+                'confirmation_code' => md5(uniqid(mt_rand(), true)),
+                'confirmed'         => true,
+                'account_id'        => $i,
+                'status'            => 1,
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ];
+        }
+
+        DB::table('users')->insert($users2);
+
 
 //        $cObj = new Contact;
 //        $uIds = [1];
@@ -80,7 +99,8 @@ class CoreUsersTableSeeder extends Seeder
 //        $db->dropDatabaseAndUserIfExists(1); // For Super User
 //        $db->createDatabase(1);
 
-        if (env('DB_CONNECTION') == 'mysql') {
+        if (env('DB_CONNECTION') == 'mysql')
+        {
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         }
     }
