@@ -48,8 +48,8 @@ class Database extends Model
         $this->newAccountConnectionSettings = $this->getConnectionSettings($this->databaseSettings);
 
         // Create database and user
-        $this->createNewDatabase();
-        $this->createNewUser();
+//        $this->createNewDatabase();
+//        $this->createNewUser();
 
         // Run migrations and seeds
         $this->setupUserDatabaseServerConnection();
@@ -81,20 +81,20 @@ class Database extends Model
     public function createNewDatabase()
     {
         // % means all ips
-        $result = DB::connection($this->serverConnectionKey)
-            ->statement('GRANT ALL PRIVILEGES ON * . * TO \'homestead\'@\'%\' IDENTIFIED BY \'secret\' WITH GRANT OPTION;');
-
-        if(true !== $result) {
-            throw new GeneralException('Error granting user privileges');
-        }
+//        $result = DB::connection($this->serverConnectionKey)
+//            ->statement('GRANT ALL PRIVILEGES ON * . * TO \'homestead\'@\'%\' IDENTIFIED BY \'secret\' WITH GRANT OPTION;');
+//
+//        if(true !== $result) {
+//            throw new GeneralException('Error granting user privileges');
+//        }
 
         // flush privileges
-        $result = DB::connection($this->serverConnectionKey)
-            ->statement('FLUSH PRIVILEGES;');
-
-        if(true !== $result) {
-            throw new GeneralException('Error flushing privileges');
-        }
+//        $result = DB::connection($this->serverConnectionKey)
+//            ->statement('FLUSH PRIVILEGES;');
+//
+//        if(true !== $result) {
+//            throw new GeneralException('Error flushing privileges');
+//        }
 
         // create database
         $result = DB::connection($this->serverConnectionKey)
@@ -180,11 +180,15 @@ class Database extends Model
         return [
             'host' => $this->getHost($accountId),
             'port' => $this->getPort($accountId),
-            'database' => $this->getDatabase($accountId).'_'.$accountId,
-            'username' => 'topicmine'.$accountId,
-            'password' => $this->getPassword($accountId),
+//            'database' => $this->getDatabase($accountId).'_'.$accountId,
+            'database' => 'accounts',
+//            'username' => 'topicmine'.$accountId,
+            'username' => 'homestead',
+//            'password' => $this->getPassword($accountId),
+            'password' => 'secret',
             'account_id' => $accountId,
-            'connection_key' => $this->getNewAccountDatabaseConnectionKey($accountId),
+//            'connection_key' => $this->getNewAccountDatabaseConnectionKey($accountId),
+            'connection_key' => 'accounts',
         ];
     }
 
