@@ -23,7 +23,7 @@ class UserDatabasesTableSeeder extends Seeder
 //        $db->dropDatabaseAndUserIfExists(2);
         $db->createDatabase(2);
 
-        for ($i = 10; $i < 30; $i ++)
+        for ($i = 10; $i < 30; $i++)
         {
             $db->createDatabase($i);
         }

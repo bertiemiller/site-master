@@ -68,7 +68,7 @@ class CoreUsersTableSeeder extends Seeder {
 
         DB::table('users')->insert($users);
 
-        for ($i = 10; $i < 30; $i ++)
+        for ($i = 10; $i < 30; $i++)
         {
             $users2[] = [
                 'name'              => 'Name',

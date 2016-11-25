@@ -29,7 +29,7 @@ class UserContactsTableSeeder extends Seeder
             $cObj->create($c);
         }
 
-        for ($i = 10; $i < 30; $i ++)
+        for ($i = 10; $i < 30; $i++)
         {
             $c = [
                 'user_id' => $i,
