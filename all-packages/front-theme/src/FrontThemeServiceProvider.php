@@ -50,7 +50,8 @@ class FrontThemeServiceProvider extends ServiceProvider {
         {
             try
             {
-                if (config('database.connections.wordpress_database') && DB::connection('wordpress_database')->getDatabaseName())
+                if (config('database.connections.wordpress_database') &&
+                    DB::connection('wordpress_database')->getDatabaseName())
                 {
                     $menu = Category::slug('topic-mine-main-menu')
                         ->posts()

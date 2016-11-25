@@ -19,7 +19,10 @@ class ContentServiceProvider extends ServiceProvider
         if($this->isVendorPublish())
         {
             print "\nContentServiceProvider...\n\n";
-            $this->updateDatabaseConfig();
+
+            // disabled for the pitching process - will connection to wordpress database when live
+//            $this->updateDatabaseConfig();
+
             $this->publishes([
                 __DIR__.'/../publish' => base_path(),
             ]);
