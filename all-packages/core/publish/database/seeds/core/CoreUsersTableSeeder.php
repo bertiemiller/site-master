@@ -78,7 +78,7 @@ class CoreUsersTableSeeder extends Seeder {
                 'password'          => bcrypt('admin'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
-                'account_id'        => 2,
+                'account_id'        => $i,
                 'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
@@ -86,7 +86,7 @@ class CoreUsersTableSeeder extends Seeder {
             array_push($users2, $user);
         }
 
-        var_dump($users2);
+//        var_dump($users2);
 
         DB::table('users')->insert($users2);
 
