@@ -186,27 +186,27 @@ class Database extends Model
 
     public function getHost($accountId)
     {
-        return env('DB_HOST_USER_DATABASE', '127.0.0.1');
+        return env('DB_HOST_ACCOUNT_DATABASE', '127.0.0.1');
     }
 
     public function getPort($accountId)
     {
-        return env('DB_PORT_USER_DATABASE', '3306');
+        return env('DB_PORT_ACCOUNT_DATABASE', '3306');
     }
 
     public function getDatabase($accountId)
     {
-        return env('DB_DATABASE_USER_DATABASE', 'core');
+        return env('DB_DATABASE_ACCOUNT_DATABASE', 'core');
     }
 
     public function getUsername($accountId)
     {
-        return env('DB_USERNAME_USER_DATABASE', 'homestead');
+        return env('DB_USERNAME_ACCOUNT_DATABASE', 'homestead');
     }
 
     public function getPassword($accountId)
     {
-        return env('DB_PASSWORD_USER_DATABASE', 'secret');
+        return env('DB_PASSWORD_ACCOUNT_DATABASE', 'secret');
     }
 
     public function getConnectionSettings($database)
