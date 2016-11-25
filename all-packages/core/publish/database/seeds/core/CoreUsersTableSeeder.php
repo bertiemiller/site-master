@@ -76,7 +76,7 @@ class CoreUsersTableSeeder extends Seeder {
                 'password'          => bcrypt('admin'),
                 'confirmation_code' => md5(uniqid(mt_rand(), true)),
                 'confirmed'         => true,
-                'account_id'        => $i,
+                'account_id'        => 2,
                 'status'            => 1,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),

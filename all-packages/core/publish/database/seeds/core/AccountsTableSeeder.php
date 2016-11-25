@@ -31,6 +31,17 @@ class AccountsTableSeeder extends Seeder
             'user_id'     => 2, // Admin User
             'database_id'     => 2,
         ));
+
+        for ($i = 10; $i < 30; $i++)
+        {
+            Account::create(array(
+                'id' => $i,
+                'name' => 'Account Name',
+                'description'     => 'Account Desc',
+                'user_id'     => $i,
+                'database_id'     => $i,
+            ));
+        }
 //
 //        // create database
 //        $db = new Database;
