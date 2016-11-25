@@ -30,8 +30,9 @@ class SubscriptionSetup {
         // need to do : if account is deactivated, redirect them through
         // subscription with a welcome back message
 
-        if ($this->accountNotScubcribed($user, $account_user, $account))
-            return redirect()->route('topicmine.subscription.subscription.create');
+        // disabled for pitching process
+//        if ($this->accountNotScubcribed($user, $account_user, $account))
+//            return redirect()->route('topicmine.subscription.subscription.create');
 
         return $next($request);
     }
