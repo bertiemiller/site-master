@@ -21,7 +21,11 @@ class UserContactsTableSeeder extends Seeder
         $uIds = [1,2,3,4]; // 1 is Super User
         foreach($uIds as $uId)
         {
-            $c = ['user_id' => $uId];
+            $c = [
+                'user_id' => $uId,
+                'first_name' => '(first name)',
+                'last_name' => '(last name)'
+            ];
             $cObj->create($c);
         }
 
